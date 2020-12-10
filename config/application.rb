@@ -1,6 +1,16 @@
 require_relative 'boot'
 
-require 'rails/all'
+# Based on https://github.com/rails/rails/blob/v6.0.3/railties/lib/rails/all.rb
+# Only load the railties we need instead of loading everything
+require 'rails'
+
+require 'active_record/railtie'
+require 'active_storage/engine'
+require 'action_controller/railtie'
+require 'action_view/railtie'
+require 'action_mailer/railtie'
+require 'action_cable/engine'
+require 'rails/test_unit/railtie'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
